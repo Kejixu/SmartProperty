@@ -7,7 +7,9 @@
     "connect": "1.8.5",
     "express": "2.5.2",
     "jade": "0.20.0",
-    "socket.io": "0.8.7"
+    "socket.io": "0.8.7",
+    "bitcore": "0.8.6",
+    "blocktrail-sdk'": "1.0.3"
   },
   "devDependencies": {
     "vows": "0.5.x",

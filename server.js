@@ -3,8 +3,8 @@ var connect = require('connect')
     , express = require('express')
     , io = require('socket.io')
     //, utxos = require('./getUTXOs')
-    //, bitcore = require('bitcore')
-    , port = (process.env.PORT || 8081);
+    , bitcore = require('bitcore')
+    , port = (process.env.PORT);
 
 //var pk = new bitcore.PrivateKey();
 //var addr = pk.toAddress();
