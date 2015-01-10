@@ -2,12 +2,12 @@
 var connect = require('connect')
     , express = require('express')
     , io = require('socket.io')
-    , utxos = require('./getUTXOs')
+    //, utxos = require('./getUTXOs')
     , bitcore = require('bitcore')
     , port = (process.env.PORT || 8081);
 
-var pk = new bitcore.PrivateKey();
-var addr = pk.toAddress();
+//var pk = new bitcore.PrivateKey();
+//var addr = pk.toAddress();
 
 /*utxos.getUTXOs(addr.toString(), function(utxos) {
   console.log(addr);
@@ -61,7 +61,7 @@ io.sockets.on('connection', function(socket){
     console.log('Client Disconnected.');
   });
 
-  socket.emit('client', addr);
+ // socket.emit('client', addr);
 });
 
 
