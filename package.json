@@ -9,7 +9,6 @@
     "jade": "0.20.0",
     "socket.io": "0.8.7",
     "bitcore": "0.8.6",
-    "blocktrail-sdk'": "1.0.3"
   },
   "devDependencies": {
     "vows": "0.5.x",
