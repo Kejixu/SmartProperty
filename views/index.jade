@@ -1,6 +1,101 @@
 extends layout
 
+block title
+    | Smart Property
 block content
-	div
-		a(id='sender')='Send a Message'
-		ul(id='receiver')
+    #preloader
+        #load
+    nav.navbar.navbar-custom.navbar-fixed-top(role="navigation")
+        .container
+          .navbar-header.page-scroll
+            button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-main-collapse")
+              i.fa.fa-bars
+            a.navbar-brand(href="index.html")   
+          // Collect the nav links, forms, and other content for toggling
+          .collapse.navbar-collapse.navbar-right.navbar-main-collapse
+            ul.nav.navbar-nav
+              li.active
+                a(href="#intro") Home
+              li
+                a(href="#about") About
+              li
+                a(href="#service") BitTrade
+         // /.navbar-collapse
+        // /.container
+      // Section: intro
+    section#intro.intro
+      .slogan
+        h2
+          | Welcome to
+          span.text_color BitTrade
+        h4 Safe, Anonymous, Transaction of Smart Property
+    section#about.home-section.text-center
+      .heading-about
+        .container
+          .row
+            .col-lg-8.col-lg-offset-2
+              .wow.bounceInDown(data-wow-delay="0.4s")
+                .section-heading
+                  h2 About us
+                  i.fa.fa-2x.fa-angle-down
+      .container
+        .row
+          .col-lg-2.col-lg-offset-5
+            hr.marginbot-50
+        .row
+          .col-xs-4.col-sm-4.col-md-4
+            .wow.bounceInUp(data-wow-delay="0.2s")
+              .team.boxed-grey
+                .inner
+                  h5 Ben Stallworth
+                  p.subtitle Transaction Tamer
+                  .avatar
+                    img.img-responsive.img-circle(src="img/team/2.jpg", alt="")
+          .col-xs-4.col-sm-4.col-md-4
+            .wow.bounceInUp(data-wow-delay="0.5s")
+              .team.boxed-grey
+                .inner
+                  h5 Karthik Dhore
+                  p.subtitle Bitcoin Warrior
+                  .avatar
+                    img.img-responsive.img-circle(src="img/team/1.jpg", alt="")
+          .col-xs-4.col-sm-4.col-md-4
+            .wow.bounceInUp(data-wow-delay="0.8s")
+              .team.boxed-grey
+                .inner
+                  h5 Keji Xu
+                  p.subtitle Contract Killer
+                  .avatar
+                    img.img-responsive.img-circle(src="img/team/3.jpg", alt="")
+// /Section: about
+
+//      .row
+        .box
+          .col-lg-12
+            hr
+            h2.intro-text.text-center
+              | Worth it
+              strong worth visiting
+            hr
+            images.images-responsive.images-border.images-left(src="images/intro-pic.jpg", alt="")
+            hr.visible-xs
+            p
+              | The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.
+            p
+              | A huge thanks to
+              a(href="http://join.deathtothestockphoto.com/", target="_blank") Death to the Stock Photo
+              | for allowing us to use the beautiful photos that make this template really come to life. When using this template, make sure your photos are decent. Also make sure that the file size on your photos is kept to a minumum to keep load times to a minimum.
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+      .row
+        .box
+          .col-lg-12
+            hr
+            h2.intro-text.text-center
+              | Beautiful boxes
+              strong to showcase your content
+            hr
+            p
+              | Use as many boxes as you like, and put anything you want in them! They are great for just about anything, the sky"s the limit!
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.

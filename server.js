@@ -2,7 +2,17 @@
 var connect = require('connect')
     , express = require('express')
     , io = require('socket.io')
+    , utxos = require('getUTXOs')
+    , bitcore = require('bitcore')
     , port = (process.env.PORT || 8081);
+
+var pk = new bitcore.PrivateKey();
+var addr = pk.toAddress();
+
+/*utxos.getUTXOs(addr.toString(), function(utxos) {
+  console.log(addr);
+  console.log("UTXOs of new address (should be empty): " + utxos);
+});*/
 
 //Setup Express
 var server = express.createServer();
@@ -37,6 +47,8 @@ server.error(function(err, req, res, next){
 });
 server.listen( port);
 
+
+
 //Setup Socket.IO
 var io = io.listen(server);
 io.sockets.on('connection', function(socket){
@@ -48,7 +60,10 @@ io.sockets.on('connection', function(socket){
   socket.on('disconnect', function(){
     console.log('Client Disconnected.');
   });
+
+  socket.emit('client', addr);
 });
+
 
 
 ///////////////////////////////////////////
@@ -60,14 +75,24 @@ io.sockets.on('connection', function(socket){
 server.get('/', function(req,res){
   res.render('index.jade', {
     locals : { 
-              title : 'Your Page Title'
-             ,description: 'Your Page Description'
-             ,author: 'Your Name'
+              title : 'Smart Property'
+             ,description: 'Trade your bitcoins for "smart" objects'
+             ,author: 'Keji Xu'
              ,analyticssiteid: 'XXXXXXX' 
             }
-  });
+    });
 });
 
+server.get('/transaction', function(req,res){
+  res.render('transaction.jade', {
+    locals : { 
+              title : 'Smart Property'
+             ,description: 'Trade'
+             ,author: 'Keji Xu'
+             ,analyticssiteid: 'XXXXXXX' 
+            }
+    });
+});
 
 //A Route for Creating a 500 Error (Useful to keep around)
 server.get('/500', function(req, res){

@@ -1,0 +1,23 @@
+extends layout
+block title
+    | Exchange
+
+block content
+    .container
+      .row
+        .box
+          .col-lg-12
+            hr
+            h2.intro-text.text-center
+              | Exchange
+              strong Goods
+            form(role="form")
+              .row
+                .form-group.col-lg-4
+                    label Lock Public Key
+                    input.form-control(type="text")
+                    input(type="hidden", name="save", value="key")
+                    |   <br />
+                    button.btn.btn-primary(type="submit") Submit
+
+    #test

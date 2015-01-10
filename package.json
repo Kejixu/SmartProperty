@@ -1,8 +1,8 @@
 {
-  "name": "YOUR-PROJECT-NAME-HERE",
-  "description": "YOUR PROJECT DESCRIPTION HERE",
-  "author": "YOUR NAME <your@emailaddress.com>",
-  "version": "0.0.1",
+  "name": "SmartProperty",
+  "description": "Demonstrating Smart Property of Bitcoin",
+  "author": "Karthik, Ben, Keji",
+  "version": "0.0.1-1",
   "dependencies": {
     "connect": "1.8.5",
     "express": "2.5.2",
@@ -12,8 +12,15 @@
   },
   "devDependencies": {
     "vows": "0.5.x",
-	"mocha": "*",
-	"should": "*"
+    "mocha": "*",
+    "should": "*"
   },
-  "engine": "node >= 0.6.6"
+  "engine": "node >= 0.6.6",
+  "subdomain": "SmartPropertyProject",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
 }
