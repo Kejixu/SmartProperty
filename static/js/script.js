@@ -4,6 +4,12 @@ $(document).ready(function() {
 
 
   var socket = io.connect();
+  socket.on('client', function(data) {
+  	console.log(data);
+  });
+
+
+  	
 
 
  /* $('#sender').bind('click', function() {
