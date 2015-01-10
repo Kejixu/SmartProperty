@@ -1,9 +1,9 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'jitsu', '-g' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'python-shell' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.35
-4 verbose cache add [ 'jitsu', null ]
-5 verbose cache add name=undefined spec="jitsu" args=["jitsu",null]
+4 verbose cache add [ 'python-shell', null ]
+5 verbose cache add name=undefined spec="python-shell" args=["python-shell",null]
 6 verbose parsed url { protocol: null,
 6 verbose parsed url   slashes: null,
 6 verbose parsed url   auth: null,
@@ -13,257 +13,117 @@
 6 verbose parsed url   hash: null,
 6 verbose parsed url   search: null,
 6 verbose parsed url   query: null,
-6 verbose parsed url   pathname: 'jitsu',
-6 verbose parsed url   path: 'jitsu',
-6 verbose parsed url   href: 'jitsu' }
-7 silly lockFile 9d81e68b-jitsu jitsu
-8 verbose lock jitsu /Users/kxu/.npm/9d81e68b-jitsu.lock
-9 silly lockFile 9d81e68b-jitsu jitsu
-10 silly lockFile 9d81e68b-jitsu jitsu
-11 verbose addNamed [ 'jitsu', '' ]
+6 verbose parsed url   pathname: 'python-shell',
+6 verbose parsed url   path: 'python-shell',
+6 verbose parsed url   href: 'python-shell' }
+7 silly lockFile 1ff0c81c-python-shell python-shell
+8 verbose lock python-shell /Users/kxu/.npm/1ff0c81c-python-shell.lock
+9 silly lockFile 1ff0c81c-python-shell python-shell
+10 silly lockFile 1ff0c81c-python-shell python-shell
+11 verbose addNamed [ 'python-shell', '' ]
 12 verbose addNamed [ null, '*' ]
-13 silly lockFile e680b62f-jitsu jitsu@
-14 verbose lock jitsu@ /Users/kxu/.npm/e680b62f-jitsu.lock
-15 silly addNameRange { name: 'jitsu', range: '*', hasData: false }
-16 verbose request where is /jitsu
+13 silly lockFile 512086d2-python-shell python-shell@
+14 verbose lock python-shell@ /Users/kxu/.npm/512086d2-python-shell.lock
+15 silly addNameRange { name: 'python-shell', range: '*', hasData: false }
+16 verbose request where is /python-shell
 17 verbose request registry https://registry.npmjs.org/
-18 verbose request id 22b5a52eff51942b
-19 verbose url raw /jitsu
-20 verbose url resolving [ 'https://registry.npmjs.org/', './jitsu' ]
-21 verbose url resolved https://registry.npmjs.org/jitsu
-22 verbose request where is https://registry.npmjs.org/jitsu
-23 info trying registry request attempt 1 at 12:29:54
-24 http GET https://registry.npmjs.org/jitsu
-25 http 200 https://registry.npmjs.org/jitsu
-26 silly registry.get cb [ 200,
-26 silly registry.get   { date: 'Sat, 10 Jan 2015 17:29:55 GMT',
-26 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-26 silly registry.get     etag: '"E1XJDXBJ1ZPHZSSXTKUV0IVID"',
-26 silly registry.get     'content-type': 'application/json',
-26 silly registry.get     'cache-control': 'max-age=60',
-26 silly registry.get     'content-length': '175906',
-26 silly registry.get     'accept-ranges': 'bytes',
-26 silly registry.get     via: '1.1 varnish',
-26 silly registry.get     age: '0',
-26 silly registry.get     'x-served-by': 'cache-jfk1022-JFK',
-26 silly registry.get     'x-cache': 'MISS',
-26 silly registry.get     'x-cache-hits': '0',
-26 silly registry.get     'x-timer': 'S1420910994.895408,VS0,VE349',
-26 silly registry.get     vary: 'Accept',
-26 silly registry.get     'keep-alive': 'timeout=10, max=50',
-26 silly registry.get     connection: 'Keep-Alive' } ]
-27 silly addNameRange number 2 { name: 'jitsu', range: '*', hasData: true }
-28 silly addNameRange versions [ 'jitsu',
-28 silly addNameRange   [ '0.4.14',
-28 silly addNameRange     '0.4.15',
-28 silly addNameRange     '0.4.16',
-28 silly addNameRange     '0.5.0',
-28 silly addNameRange     '0.5.0-1',
-28 silly addNameRange     '0.6.0',
-28 silly addNameRange     '0.6.1',
-28 silly addNameRange     '0.6.1-1',
-28 silly addNameRange     '0.6.2',
-28 silly addNameRange     '0.6.3',
-28 silly addNameRange     '0.7.0',
-28 silly addNameRange     '0.7.0-1',
-28 silly addNameRange     '0.7.0-2',
-28 silly addNameRange     '0.7.1',
-28 silly addNameRange     '0.7.2',
-28 silly addNameRange     '0.7.2-1',
-28 silly addNameRange     '0.7.3',
-28 silly addNameRange     '0.7.4',
-28 silly addNameRange     '0.7.4-1',
-28 silly addNameRange     '0.7.5',
-28 silly addNameRange     '0.7.6',
-28 silly addNameRange     '0.7.6-1',
-28 silly addNameRange     '0.7.7',
-28 silly addNameRange     '0.7.7-1',
-28 silly addNameRange     '0.7.7-2',
-28 silly addNameRange     '0.7.100',
-28 silly addNameRange     '0.8.0',
-28 silly addNameRange     '0.8.1',
-28 silly addNameRange     '0.8.2',
-28 silly addNameRange     '0.8.2-1',
-28 silly addNameRange     '0.8.3',
-28 silly addNameRange     '0.8.4',
-28 silly addNameRange     '0.8.4-1',
-28 silly addNameRange     '0.8.5',
-28 silly addNameRange     '0.8.5-1',
-28 silly addNameRange     '0.8.6',
-28 silly addNameRange     '0.8.7',
-28 silly addNameRange     '0.8.8',
-28 silly addNameRange     '0.8.9',
-28 silly addNameRange     '0.9.0',
-28 silly addNameRange     '0.9.1',
-28 silly addNameRange     '0.9.2',
-28 silly addNameRange     '0.9.3',
-28 silly addNameRange     '0.9.4',
-28 silly addNameRange     '0.9.5',
-28 silly addNameRange     '0.9.6',
-28 silly addNameRange     '0.9.7',
-28 silly addNameRange     '0.9.8',
-28 silly addNameRange     '0.10.0',
-28 silly addNameRange     '0.10.1',
-28 silly addNameRange     '0.10.2',
-28 silly addNameRange     '0.10.3',
-28 silly addNameRange     '0.10.3-1',
-28 silly addNameRange     '0.10.3-2',
-28 silly addNameRange     '0.10.4',
-28 silly addNameRange     '0.10.5',
-28 silly addNameRange     '0.11.0',
-28 silly addNameRange     '0.11.1',
-28 silly addNameRange     '0.11.2',
-28 silly addNameRange     '0.11.3',
-28 silly addNameRange     '0.11.4',
-28 silly addNameRange     '0.11.5',
-28 silly addNameRange     '0.11.6',
-28 silly addNameRange     '0.11.7',
-28 silly addNameRange     '0.12.0',
-28 silly addNameRange     '0.12.1',
-28 silly addNameRange     '0.12.2',
-28 silly addNameRange     '0.12.3',
-28 silly addNameRange     '0.12.4',
-28 silly addNameRange     '0.12.5',
-28 silly addNameRange     '0.12.6',
-28 silly addNameRange     '0.12.6-1',
-28 silly addNameRange     '0.12.7',
-28 silly addNameRange     '0.12.8',
-28 silly addNameRange     '0.12.9',
-28 silly addNameRange     '0.12.10',
-28 silly addNameRange     '0.12.10-1',
-28 silly addNameRange     '0.12.10-2',
-28 silly addNameRange     '0.12.11',
-28 silly addNameRange     '0.12.12',
-28 silly addNameRange     '0.12.13',
-28 silly addNameRange     '0.12.14',
-28 silly addNameRange     '0.12.15',
-28 silly addNameRange     '0.13.0',
-28 silly addNameRange     '0.13.1',
-28 silly addNameRange     '0.13.2',
-28 silly addNameRange     '0.13.3',
-28 silly addNameRange     '0.13.4',
-28 silly addNameRange     '0.13.5',
-28 silly addNameRange     '0.13.6',
-28 silly addNameRange     '0.13.7',
-28 silly addNameRange     '0.13.8',
-28 silly addNameRange     '0.13.9',
-28 silly addNameRange     '0.13.10',
-28 silly addNameRange     '0.13.11',
-28 silly addNameRange     '0.13.12',
-28 silly addNameRange     '0.13.13',
-28 silly addNameRange     '0.13.14',
-28 silly addNameRange     '0.13.15',
-28 silly addNameRange     '0.13.16',
-28 silly addNameRange     '0.13.17',
-28 silly addNameRange     '0.13.18',
-28 silly addNameRange     '0.14.0' ] ]
-29 verbose addNamed [ 'jitsu', '0.14.0' ]
-30 verbose addNamed [ '0.14.0', '0.14.0' ]
-31 silly lockFile 0b9b3fad-jitsu-0-14-0 jitsu@0.14.0
-32 verbose lock jitsu@0.14.0 /Users/kxu/.npm/0b9b3fad-jitsu-0-14-0.lock
-33 silly lockFile 70f7b1c0-npmjs-org-jitsu-jitsu-0-14-0-tgz https://registry.npmjs.org/jitsu/-/jitsu-0.14.0.tgz
-34 verbose lock https://registry.npmjs.org/jitsu/-/jitsu-0.14.0.tgz /Users/kxu/.npm/70f7b1c0-npmjs-org-jitsu-jitsu-0-14-0-tgz.lock
-35 verbose addRemoteTarball [ 'https://registry.npmjs.org/jitsu/-/jitsu-0.14.0.tgz',
-35 verbose addRemoteTarball   'c0e795f4085881ff6eb3b94da608015a2a898fb0' ]
-36 info retry fetch attempt 1 at 12:29:55
-37 verbose fetch to= /var/folders/5p/ssptp169317c14k7dy8q5d8h0000gp/T/npm-79763-9RcQlTq_/registry.npmjs.org/jitsu/-/jitsu-0.14.0.tgz
-38 http GET https://registry.npmjs.org/jitsu/-/jitsu-0.14.0.tgz
-39 http 200 https://registry.npmjs.org/jitsu/-/jitsu-0.14.0.tgz
-40 silly lockFile 70f7b1c0-npmjs-org-jitsu-jitsu-0-14-0-tgz https://registry.npmjs.org/jitsu/-/jitsu-0.14.0.tgz
-41 silly lockFile 70f7b1c0-npmjs-org-jitsu-jitsu-0-14-0-tgz https://registry.npmjs.org/jitsu/-/jitsu-0.14.0.tgz
-42 silly lockFile 0b9b3fad-jitsu-0-14-0 jitsu@0.14.0
-43 silly lockFile 0b9b3fad-jitsu-0-14-0 jitsu@0.14.0
-44 silly lockFile e680b62f-jitsu jitsu@
-45 silly lockFile e680b62f-jitsu jitsu@
-46 silly resolved [ { name: 'jitsu',
-46 silly resolved     description: 'Flawless command line deployment of Node.js apps to the cloud',
-46 silly resolved     keywords:
-46 silly resolved      [ 'cli',
-46 silly resolved        'nodejitsu',
-46 silly resolved        'cloud hosting',
-46 silly resolved        'platform-as-a-service',
-46 silly resolved        'deployment' ],
-46 silly resolved     version: '0.14.0',
-46 silly resolved     author: { name: 'Nodejitsu Inc.', email: 'info@nodejitsu.com' },
-46 silly resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
-46 silly resolved     repository: { type: 'git', url: 'http://github.com/nodejitsu/jitsu.git' },
-46 silly resolved     preferGlobal: true,
-46 silly resolved     dependencies:
-46 silly resolved      { canihaz: '1.0.1',
-46 silly resolved        colors: '0.6.2',
-46 silly resolved        complete: '0.3.1',
-46 silly resolved        dateformat: '1.0.8-1.2.3',
-46 silly resolved        flatiron: '0.3.11',
-46 silly resolved        'flatiron-cli-config': '0.1.4',
-46 silly resolved        'flatiron-cli-users': '0.1.10',
-46 silly resolved        fstream: '0.1.25',
-46 silly resolved        'fstream-npm': '0.1.6',
-46 silly resolved        ladder: '0.0.1',
-46 silly resolved        'nodejitsu-api': '0.6.4',
-46 silly resolved        opener: '1.4.x',
-46 silly resolved        pkginfo: '0.3.0',
-46 silly resolved        progress: '0.1.0',
-46 silly resolved        request: '2.42.0',
-46 silly resolved        'require-analyzer': '0.5.0',
-46 silly resolved        'spawn-command': '0.0.2',
-46 silly resolved        semver: '1.0.14',
-46 silly resolved        tar: '0.1.18',
-46 silly resolved        wizard: '0.0.1' },
-46 silly resolved     canihaz: { npm: '1.3.15' },
-46 silly resolved     devDependencies: { nock: '0.46.x', vows: '0.7.x' },
-46 silly resolved     bin: { jitsu: './bin/jitsu' },
-46 silly resolved     main: './lib/jitsu',
-46 silly resolved     scripts: { test: 'vows test/commands/*-test.js test/lib/*-test.js --spec -i' },
-46 silly resolved     engines: { node: '>= 0.6.0' },
-46 silly resolved     license: 'MIT',
-46 silly resolved     gitHead: 'f7985bc74a20c9e4cf6b11962e8afa606732b667',
-46 silly resolved     bugs: { url: 'https://github.com/nodejitsu/jitsu/issues' },
-46 silly resolved     homepage: 'https://github.com/nodejitsu/jitsu',
-46 silly resolved     _id: 'jitsu@0.14.0',
-46 silly resolved     _shasum: 'c0e795f4085881ff6eb3b94da608015a2a898fb0',
-46 silly resolved     _from: 'jitsu@',
-46 silly resolved     _npmVersion: '1.4.23',
-46 silly resolved     _npmUser: { name: 'swaagie', email: 'info@martijnswaagman.nl' },
-46 silly resolved     dist:
-46 silly resolved      { shasum: 'c0e795f4085881ff6eb3b94da608015a2a898fb0',
-46 silly resolved        tarball: 'http://registry.npmjs.org/jitsu/-/jitsu-0.14.0.tgz' },
-46 silly resolved     directories: {},
-46 silly resolved     _resolved: 'https://registry.npmjs.org/jitsu/-/jitsu-0.14.0.tgz' } ]
-47 info install jitsu@0.14.0 into /usr/local/lib
-48 info installOne jitsu@0.14.0
-49 verbose lib/node_modules/jitsu unbuild
-50 verbose tar unpack /Users/kxu/.npm/jitsu/0.14.0/package.tgz
-51 silly lockFile 0ce65918-usr-local-lib-node-modules-jitsu tar:///usr/local/lib/node_modules/jitsu
-52 verbose lock tar:///usr/local/lib/node_modules/jitsu /Users/kxu/.npm/0ce65918-usr-local-lib-node-modules-jitsu.lock
-53 silly lockFile f15af3c7-kxu-npm-jitsu-0-14-0-package-tgz tar:///Users/kxu/.npm/jitsu/0.14.0/package.tgz
-54 verbose lock tar:///Users/kxu/.npm/jitsu/0.14.0/package.tgz /Users/kxu/.npm/f15af3c7-kxu-npm-jitsu-0-14-0-package-tgz.lock
-55 silly gunzTarPerm modes [ '755', '644' ]
-56 error Error: EACCES, mkdir '/usr/local/lib/node_modules/jitsu'
-56 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/jitsu']
-56 error   errno: 3,
-56 error   code: 'EACCES',
-56 error   path: '/usr/local/lib/node_modules/jitsu',
-56 error   fstream_type: 'Directory',
-56 error   fstream_path: '/usr/local/lib/node_modules/jitsu',
-56 error   fstream_class: 'DirWriter',
-56 error   fstream_stack:
-56 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
-56 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
-56 error      'Object.oncomplete (fs.js:108:15)' ] }
-57 error Please try running this command again as root/Administrator.
-58 error System Darwin 14.0.0
-59 error command "node" "/usr/local/bin/npm" "install" "jitsu" "-g"
-60 error cwd /Users/kxu/Documents/SmartPropertyProject
-61 error node -v v0.10.35
-62 error npm -v 1.4.28
-63 error path /usr/local/lib/node_modules/jitsu
-64 error fstream_path /usr/local/lib/node_modules/jitsu
-65 error fstream_type Directory
-66 error fstream_class DirWriter
-67 error code EACCES
-68 error errno 3
-69 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/jitsu'
-70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
-70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
-70 error fstream_stack Object.oncomplete (fs.js:108:15)
-71 verbose exit [ 3, true ]
+18 verbose request id 592d095df68958f8
+19 verbose url raw /python-shell
+20 verbose url resolving [ 'https://registry.npmjs.org/', './python-shell' ]
+21 verbose url resolved https://registry.npmjs.org/python-shell
+22 verbose request where is https://registry.npmjs.org/python-shell
+23 info trying registry request attempt 1 at 17:15:53
+24 verbose etag "BHAPMLDJD66YPKGHDWINRCKMA"
+25 http GET https://registry.npmjs.org/python-shell
+26 http 304 https://registry.npmjs.org/python-shell
+27 silly registry.get cb [ 304,
+27 silly registry.get   { date: 'Sat, 10 Jan 2015 22:15:54 GMT',
+27 silly registry.get     server: 'Apache',
+27 silly registry.get     via: '1.1 varnish',
+27 silly registry.get     'last-modified': 'Sat, 10 Jan 2015 22:15:54 GMT',
+27 silly registry.get     'cache-control': 'max-age=60',
+27 silly registry.get     etag: '"BHAPMLDJD66YPKGHDWINRCKMA"',
+27 silly registry.get     age: '0',
+27 silly registry.get     'x-served-by': 'cache-jfk1032-JFK',
+27 silly registry.get     'x-cache': 'MISS',
+27 silly registry.get     'x-cache-hits': '0',
+27 silly registry.get     'x-timer': 'S1420928154.414505,VS0,VE427',
+27 silly registry.get     vary: 'Accept',
+27 silly registry.get     'content-length': '0',
+27 silly registry.get     'keep-alive': 'timeout=10, max=50',
+27 silly registry.get     connection: 'Keep-Alive' } ]
+28 verbose etag https://registry.npmjs.org/python-shell from cache
+29 silly addNameRange number 2 { name: 'python-shell', range: '*', hasData: true }
+30 silly addNameRange versions [ 'python-shell', [ '0.0.1', '0.0.2', '0.0.3' ] ]
+31 verbose addNamed [ 'python-shell', '0.0.3' ]
+32 verbose addNamed [ '0.0.3', '0.0.3' ]
+33 silly lockFile 214847bf-python-shell-0-0-3 python-shell@0.0.3
+34 verbose lock python-shell@0.0.3 /Users/kxu/.npm/214847bf-python-shell-0-0-3.lock
+35 silly lockFile 214847bf-python-shell-0-0-3 python-shell@0.0.3
+36 silly lockFile 214847bf-python-shell-0-0-3 python-shell@0.0.3
+37 silly lockFile 512086d2-python-shell python-shell@
+38 silly lockFile 512086d2-python-shell python-shell@
+39 silly resolved [ { name: 'python-shell',
+39 silly resolved     version: '0.0.3',
+39 silly resolved     description: 'Run Python scripts from Node.js with simple (but efficient) inter-process communication through stdio',
+39 silly resolved     keywords: [ 'python' ],
+39 silly resolved     scripts: { test: 'mocha -R spec' },
+39 silly resolved     dependencies: {},
+39 silly resolved     devDependencies: { should: '^3.1.3', mocha: '^1.17.1' },
+39 silly resolved     repository:
+39 silly resolved      { type: 'git',
+39 silly resolved        url: 'http://github.com/extrabacon/python-shell' },
+39 silly resolved     homepage: 'http://github.com/extrabacon/python-shell',
+39 silly resolved     bugs: { url: 'http://github.com/extrabacon/python-shell/issues' },
+39 silly resolved     author: { name: 'Nicolas Mercier', email: 'nicolas@extrabacon.net' },
+39 silly resolved     engines: { node: '>=0.10' },
+39 silly resolved     _id: 'python-shell@0.0.3',
+39 silly resolved     _shasum: '72375971175fa96d1ee90254c2d37c3f2f945c26',
+39 silly resolved     _from: 'python-shell@',
+39 silly resolved     _npmVersion: '1.4.7',
+39 silly resolved     _npmUser: { name: 'extrabacon', email: 'nicolas@extrabacon.net' },
+39 silly resolved     maintainers: [ [Object] ],
+39 silly resolved     dist:
+39 silly resolved      { shasum: '72375971175fa96d1ee90254c2d37c3f2f945c26',
+39 silly resolved        tarball: 'http://registry.npmjs.org/python-shell/-/python-shell-0.0.3.tgz' },
+39 silly resolved     directories: {},
+39 silly resolved     _resolved: 'https://registry.npmjs.org/python-shell/-/python-shell-0.0.3.tgz',
+39 silly resolved     readme: 'ERROR: No README data found!' } ]
+40 info install python-shell@0.0.3 into /usr/local/lib
+41 info installOne python-shell@0.0.3
+42 verbose lib/node_modules/python-shell unbuild
+43 verbose tar unpack /Users/kxu/.npm/python-shell/0.0.3/package.tgz
+44 silly lockFile aa6896b2-al-lib-node-modules-python-shell tar:///usr/local/lib/node_modules/python-shell
+45 verbose lock tar:///usr/local/lib/node_modules/python-shell /Users/kxu/.npm/aa6896b2-al-lib-node-modules-python-shell.lock
+46 silly lockFile 2b6cd359-m-python-shell-0-0-3-package-tgz tar:///Users/kxu/.npm/python-shell/0.0.3/package.tgz
+47 verbose lock tar:///Users/kxu/.npm/python-shell/0.0.3/package.tgz /Users/kxu/.npm/2b6cd359-m-python-shell-0-0-3-package-tgz.lock
+48 silly gunzTarPerm modes [ '755', '644' ]
+49 error Error: EACCES, mkdir '/usr/local/lib/node_modules/python-shell'
+49 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/python-shell']
+49 error   errno: 3,
+49 error   code: 'EACCES',
+49 error   path: '/usr/local/lib/node_modules/python-shell',
+49 error   fstream_type: 'Directory',
+49 error   fstream_path: '/usr/local/lib/node_modules/python-shell',
+49 error   fstream_class: 'DirWriter',
+49 error   fstream_stack:
+49 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+49 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+49 error      'Object.oncomplete (fs.js:108:15)' ] }
+50 error Please try running this command again as root/Administrator.
+51 error System Darwin 14.0.0
+52 error command "node" "/usr/local/bin/npm" "install" "-g" "python-shell"
+53 error cwd /Users/kxu/Documents/SmartPropertyProject
+54 error node -v v0.10.35
+55 error npm -v 1.4.28
+56 error path /usr/local/lib/node_modules/python-shell
+57 error fstream_path /usr/local/lib/node_modules/python-shell
+58 error fstream_type Directory
+59 error fstream_class DirWriter
+60 error code EACCES
+61 error errno 3
+62 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/python-shell'
+63 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+63 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+63 error fstream_stack Object.oncomplete (fs.js:108:15)
+64 verbose exit [ 3, true ]
