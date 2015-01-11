@@ -3,21 +3,82 @@ block title
     | Exchange
 
 block content
-    .container
-      .row
-        .box
-          .col-lg-12
-            hr
-            h2.intro-text.text-center
-              | Exchange
-              strong Goods
-            form(role="form")
-              .row
-                .form-group.col-lg-4
-                    label Lock Public Key
-                    input.form-control(type="text")
-                    input(type="hidden", name="save", value="key")
-                    |   <br />
-                    button.btn.btn-primary(type="submit") Submit
+    nav.navbar.navbar-custom.navbar-fixed-top(role="navigation")
+        .container
+          .navbar-header.page-scroll
+            a.navbar-brand(href="/") BitTrade
+          // Collect the nav links, forms, and other content for toggling
+          .collapse.navbar-collapse.navbar-right.navbar-main-collapse
+            ul.nav.navbar-nav
+              li.active
+                a(href="/") Home
+              li
+                a(href="/#about") About
+              li
+                a(href="/transaction") bitTrade
+         // /.navbar-collapse
+        // /.container
+      // Section: intro
+    section#intro.chat-intro
+     .slogan
+      h2
+        | Make Transactions
+    section#transaction.home-section.text-center
+      .heading-contact
+        .container
+          .row
+            .col-lg-8.col-lg-offset-2
+              .wow.bounceInDown(data-wow-delay="0.4s")
+                .section-heading
+                  h2 Trade
+      .container
+        .row
+          .col-lg-8
+            .boxed-grey
+              form#transaction
+                .row
+                  .col-md-6
+                    .form-group
+                      label(for="Purpose")
+                        | Buying/Selling
+                      select#subject.form-control(required="required")
+                        option(value="na", selected="") Choose One:
+                        option(value="buy") Buying
+                        option(value="sell") Selling
+                    .buying
+                      .form-group
+                        label(for="PaymentAddress")
+                          | Payment Address
+                        input#payaddress.form-control(type="text", placeholder="Address",)
+                      .form-group
+                        label(for="ChangeAddress")
+                          | Change Address
+                        input#chanaddress.form-control(type="text", placeholder="Address")
+                    .selling
+                      .form-group
+                        label(for="Item")
+                          | Item Type
+                        select#item.form-control(required="required")
+                          option(value="na", selected="") Choose One:
+                          option(value="lock") Lock
+                      .form-group
+                        label(for="RecievingAddress")
+                          | Recieving Address
+                        input#saddress.form-control(type="text", placeholder="Address")
+                      .form-group
+                        label(for="Price")
+                          | Cost (in satoshis)
+                        .input-group
+                          input#price.form-control(type="number", placeholder="Price")
+                  .col-md-6
+                    #selection
+                      .currentSellers
+                        .form-group
+                      .currentUTXOs
+                        .form-group
+                  .col-md-12
+                    button#transact.btn.btn-skin.pull-right(type="button")
+                      | Send
+          .col-lg-4
+            #server_outputs
 
-    #test

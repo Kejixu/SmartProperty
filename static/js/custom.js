@@ -35,4 +35,17 @@
 		});
 	});
 
+	$("#subject").change(function(){
+            $( "#subject option:selected").each(function(){
+                if($(this).attr("value")=="sell"){
+                    $(".buying").hide();
+                    $(".selling").show();
+                }
+                if($(this).attr("value")=="buy"){
+                    $(".selling").hide();
+                }
+
+            });
+        }).change();
+
 })(jQuery);

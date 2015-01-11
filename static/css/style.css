@@ -295,6 +295,77 @@ hr {
 	color: #fff;
 }
 
+/* ===========================
+--- Trade Functions
+============================ */
+
+.chat-intro {
+  width:100%;
+  position:relative;
+  
+  background: url(../img/bg2.jpg) no-repeat top center;
+}
+
+#intro.chat-intro{
+  padding:20% 0 0 0;
+}
+
+.chat-intro .slogan {
+  text-align: center;
+
+}
+
+
+.chat-intro .slogan h2 {
+  color: #FFF;
+  text-shadow: none;
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 700;
+  font-family: Montserrat, sans-serif;
+  background-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+  text-transform: uppercase;
+  border-width: 0px;
+  border-color: #000;
+  border-style: none;
+  text-shadow: -1px 0 1px #000;
+}
+
+form#transaction .form-group label {
+  text-align: left !important;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+form#contact-transaction input,form#transaction select,form#transaction textarea {
+  border-radius: 0;
+  border: 1px solid #eee;
+  -webkit-box-shadow: none;
+          box-shadow:  none;
+}
+
+form#transaction input:focus,form#transaction select:focus,form#transaction textarea:focus {
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+}
+
+.selling{
+  display: none;
+}
+
+.buying{
+  display: none;
+}
+
+#selection.currentSellers{
+  display: none;
+}
+
+#selection.currentUTXOs{
+  display: none;
+}
 
 
 /* ===========================

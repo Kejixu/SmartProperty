@@ -8,6 +8,8 @@ var connect = require('connect')
 
 var pk = new bitcore.PrivateKey();
 var addr = pk.toAddress();
+var existing = new bitcore.Address('1M7LC7GcpLnLmSb2Z5ACk1AKcEcHwYc8J5');
+
 
 /*utxos.getUTXOs(addr.toString(), function(utxos) {
   console.log(addr);
@@ -61,7 +63,20 @@ io.sockets.on('connection', function(socket){
     console.log('Client Disconnected.');
   });
 
-  socket.emit('client', addr);
+  socket.on('selling', function(data){
+    socket.emit('sellers', data);
+    socket.broadcast.emit('sellers',data);
+  });
+
+  socket.on('payment', function(payment){
+    addr = new bitcore.Address(payment.myaddress);
+    console.log(addr);
+    utxos.getUTXOs(addr.toString(), function(utxos){
+      console.log("waiting");
+      socket.emit('utxos', JSON.stringify(utxos));
+      socket.broadcast.emit('utxos', utxos);
+    });
+  });
 });
 
 
