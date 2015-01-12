@@ -355,7 +355,15 @@ form#transaction input:focus,form#transaction select:focus,form#transaction text
   display: none;
 }
 
+.sellPriv{
+  display:none;
+}
+
 .buying{
+  display: none;
+}
+
+.buyPriv{
   display: none;
 }
 

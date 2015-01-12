@@ -54,29 +54,51 @@ server.listen( port);
 //Setup Socket.IO
 var io = io.listen(server);
 io.sockets.on('connection', function(socket){
+
   console.log('Client Connected');
   socket.on('message', function(data){
-    socket.broadcast.emit('server_message',data);
     socket.emit('server_message',data);
   });
+
   socket.on('disconnect', function(){
     console.log('Client Disconnected.');
   });
 
+  // Get the seller's information
   socket.on('selling', function(data){
+    // Broadcast the sellers information
     socket.emit('sellers', data);
-    socket.broadcast.emit('sellers',data);
   });
 
+  var myUtxos;
   socket.on('payment', function(payment){
-    addr = new bitcore.Address(payment.myaddress);
-    console.log(addr);
+    addr = new bitcore.Address(payment.payaddress);
+    // Send the UTXOs
     utxos.getUTXOs(addr.toString(), function(utxos){
       console.log("waiting");
-      socket.emit('utxos', JSON.stringify(utxos));
+      socket.emit('utxos', utxos);
       socket.broadcast.emit('utxos', utxos);
     });
+
+    socket.on('selutxos', function(myUTXOs) {
+      socket.emit('showPrivate');
+      myUtxos = myUTXOs;
+      
+      });
+    });
+
+  socket.on('buyPriv', function(buyerKey){
+    socket.broadcast.emit('sellerReady');
+    socket.emit('sellerReady');
+    socket.on('sellPriv', function(ownerKey){
+      //CALL FUNCTION
+      console.log("buyerKey: " + buyerKey);
+      console.log("ownerkey: " + ownerKey);
+      socket.emit("transactionComplete");
+    });
   });
+
+
 });
 
 

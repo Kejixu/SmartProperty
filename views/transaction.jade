@@ -49,11 +49,20 @@ block content
                       .form-group
                         label(for="PaymentAddress")
                           | Payment Address
-                        input#payaddress.form-control(type="text", placeholder="Address",)
+                        input#payaddress.form-control(type="text", placeholder="Address")
                       .form-group
                         label(for="ChangeAddress")
                           | Change Address
                         input#chanaddress.form-control(type="text", placeholder="Address")
+                      .form-group
+                        label(for="NewOwnershipAddress")
+                          | New Ownership Address
+                        input#newaddress.form-control(type="text", placeholder="optional")
+                    .buyPriv
+                      .form-group
+                        label(for="PrivateAddress")
+                          | Private Address of Item
+                        input#priveaddress.form-control(type="password", placeholder="Private")
                     .selling
                       .form-group
                         label(for="Item")
@@ -70,6 +79,11 @@ block content
                           | Cost (in satoshis)
                         .input-group
                           input#price.form-control(type="number", placeholder="Price")
+                    .sellPriv
+                      .form-group
+                        label(for="Private Address")
+                          | Private Address
+                        input#paddress.form-control(type="password", placeholder="Private")                      
                   .col-md-6
                     #selection
                       .currentSellers
