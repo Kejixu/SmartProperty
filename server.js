@@ -78,25 +78,24 @@ io.sockets.on('connection', function(socket){
     // Send the UTXOs
     utxos.getUTXOs(addr.toString(), function(utxos){
       console.log("waiting");
-    //  socket.emit('utxos', utxos);
-      socket.broadcast.emit('utxos', utxos);
+      socket.emit('utxos', utxos);
+     // socket.broadcast.emit('utxos', utxos);
     });
 
     socket.on('selutxos', function(myUTXOs) {
-      socket.emit('showPrivate');
+      console.log("selected UTXOs");
+      io.sockets.emit('showPrivate');
       myUtxos = myUTXOs;
-      
       });
     });
 
   socket.on('buyPriv', function(buyerKey){
-    socket.broadcast.emit('sellerReady');
-    socket.emit('sellerReady');
+    io.sockets.emit('sellerReady');
     socket.on('sellPriv', function(ownerKey){
       //CALL FUNCTION
       console.log("buyerKey: " + buyerKey);
       console.log("ownerkey: " + ownerKey);
-      socket.broadcast.emit("transactionComplete");
+      io.sockets.emit("transactionComplete");
      // socket.emit("transactionComplete");
     });
   });
