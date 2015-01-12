@@ -57,7 +57,8 @@ io.sockets.on('connection', function(socket){
 
   console.log('Client Connected');
   socket.on('message', function(data){
-    socket.emit('server_message',data);
+    socket.broadcast.emit('server_message',data);
+  //  socket.emit('server_message',data);
   });
 
   socket.on('disconnect', function(){
@@ -67,7 +68,8 @@ io.sockets.on('connection', function(socket){
   // Get the seller's information
   socket.on('selling', function(data){
     // Broadcast the sellers information
-    socket.emit('sellers', data);
+//    socket.emit('sellers', data);
+    socket.broadcast.emit('sellers', data);
   });
 
   var myUtxos;
@@ -76,7 +78,7 @@ io.sockets.on('connection', function(socket){
     // Send the UTXOs
     utxos.getUTXOs(addr.toString(), function(utxos){
       console.log("waiting");
-      socket.emit('utxos', utxos);
+    //  socket.emit('utxos', utxos);
       socket.broadcast.emit('utxos', utxos);
     });
 
@@ -94,7 +96,8 @@ io.sockets.on('connection', function(socket){
       //CALL FUNCTION
       console.log("buyerKey: " + buyerKey);
       console.log("ownerkey: " + ownerKey);
-      socket.emit("transactionComplete");
+      socket.broadcast.emit("transactionComplete");
+     // socket.emit("transactionComplete");
     });
   });
 
