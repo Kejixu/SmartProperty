@@ -1,0 +1,101 @@
+2015-01-13T12:22:48.713399+00:00 app[web.1]:    [90mdebug -[39m got heartbeat packet
+2015-01-13T12:22:48.708015+00:00 app[web.1]:    [90mdebug -[39m got heartbeat packet
+2015-01-13T12:22:48.713520+00:00 app[web.1]:    [90mdebug -[39m set heartbeat interval for client 27427840125564870
+2015-01-13T12:22:48.708062+00:00 app[web.1]:    [90mdebug -[39m cleared heartbeat timeout for client 899529117894027639
+2015-01-13T12:22:48.642948+00:00 app[web.1]:    [90mdebug -[39m emitting heartbeat for client 899529117894027639
+2015-01-13T12:22:49.159039+00:00 app[web.1]:    [90mdebug -[39m emitting heartbeat for client 19177510721494419020
+2015-01-13T12:22:49.220695+00:00 app[web.1]:    [90mdebug -[39m cleared heartbeat timeout for client 19177510721494419020
+2015-01-13T12:22:49.220794+00:00 app[web.1]:    [90mdebug -[39m set heartbeat interval for client 19177510721494419020
+2015-01-13T12:22:49.159366+00:00 app[web.1]:    [90mdebug -[39m websocket writing 2::
+2015-01-13T12:22:49.159487+00:00 app[web.1]:    [90mdebug -[39m set heartbeat timeout for client 19177510721494419020
+2015-01-13T12:22:49.220388+00:00 app[web.1]:    [90mdebug -[39m got heartbeat packet
+2015-01-13T12:22:49.434447+00:00 app[web.1]:    [90mdebug -[39m emitting heartbeat for client 905950369675011230
+2015-01-13T12:22:49.436650+00:00 app[web.1]:    [90mdebug -[39m websocket writing 2::
+2015-01-13T12:22:49.526912+00:00 app[web.1]:    [90mdebug -[39m got heartbeat packet
+2015-01-13T12:22:49.436752+00:00 app[web.1]:    [90mdebug -[39m set heartbeat timeout for client 1038053909992897284
+2015-01-13T12:22:49.526997+00:00 app[web.1]:    [90mdebug -[39m set heartbeat interval for client 1499164411323397503
+2015-01-13T12:22:49.526925+00:00 app[web.1]:    [90mdebug -[39m cleared heartbeat timeout for client 1499164411323397503
+2015-01-13T12:22:49.527190+00:00 app[web.1]:    [90mdebug -[39m cleared heartbeat timeout for client 1038053909992897284
+2015-01-13T12:22:49.527134+00:00 app[web.1]:    [90mdebug -[39m got heartbeat packet
+2015-01-13T12:22:49.527242+00:00 app[web.1]:    [90mdebug -[39m set heartbeat interval for client 1038053909992897284
+2015-01-13T12:22:49.529713+00:00 app[web.1]:    [90mdebug -[39m got heartbeat packet
+2015-01-13T12:22:49.529746+00:00 app[web.1]:    [90mdebug -[39m cleared heartbeat timeout for client 905950369675011230
+2015-01-13T12:22:49.529809+00:00 app[web.1]:    [90mdebug -[39m set heartbeat interval for client 905950369675011230
+2015-01-13T12:22:49.434807+00:00 app[web.1]:    [90mdebug -[39m websocket writing 2::
+2015-01-13T12:22:49.435121+00:00 app[web.1]:    [90mdebug -[39m websocket writing 2::
+2015-01-13T12:22:49.434915+00:00 app[web.1]:    [90mdebug -[39m set heartbeat timeout for client 905950369675011230
+2015-01-13T12:22:49.434980+00:00 app[web.1]:    [90mdebug -[39m emitting heartbeat for client 1499164411323397503
+2015-01-13T12:22:49.435192+00:00 app[web.1]:    [90mdebug -[39m set heartbeat timeout for client 1499164411323397503
+2015-01-13T12:22:49.436456+00:00 app[web.1]:    [90mdebug -[39m emitting heartbeat for client 1038053909992897284
+2015-01-13T12:22:53.690317+00:00 app[web.1]:    [90mdebug -[39m emitting heartbeat for client 2552024241371849212
+2015-01-13T12:22:53.690700+00:00 app[web.1]:    [90mdebug -[39m websocket writing 2::
+2015-01-13T12:22:53.690820+00:00 app[web.1]:    [90mdebug -[39m set heartbeat timeout for client 2552024241371849212
+2015-01-13T12:22:53.691027+00:00 app[web.1]:    [90mdebug -[39m websocket writing 2::
+2015-01-13T12:22:53.691099+00:00 app[web.1]:    [90mdebug -[39m set heartbeat timeout for client 2056785224283806112
+2015-01-13T12:22:53.691155+00:00 app[web.1]:    [90mdebug -[39m emitting heartbeat for client 6180352001135843776
+2015-01-13T12:22:53.690884+00:00 app[web.1]:    [90mdebug -[39m emitting heartbeat for client 2056785224283806112
+2015-01-13T12:22:53.691290+00:00 app[web.1]:    [90mdebug -[39m websocket writing 2::
+2015-01-13T12:22:53.691360+00:00 app[web.1]:    [90mdebug -[39m set heartbeat timeout for client 6180352001135843776
+2015-01-13T12:22:53.704823+00:00 app[web.1]:    [90mdebug -[39m set heartbeat interval for client 2056785224283806112
+2015-01-13T12:22:53.704646+00:00 app[web.1]:    [90mdebug -[39m got heartbeat packet
+2015-01-13T12:22:53.704725+00:00 app[web.1]:    [90mdebug -[39m cleared heartbeat timeout for client 2056785224283806112
+2015-01-13T12:22:53.705079+00:00 app[web.1]:    [90mdebug -[39m cleared heartbeat timeout for client 6180352001135843776
+2015-01-13T12:22:53.704997+00:00 app[web.1]:    [90mdebug -[39m got heartbeat packet
+2015-01-13T12:22:53.703669+00:00 app[web.1]:    [90mdebug -[39m got heartbeat packet
+2015-01-13T12:22:53.703792+00:00 app[web.1]:    [90mdebug -[39m cleared heartbeat timeout for client 2552024241371849212
+2015-01-13T12:22:53.703856+00:00 app[web.1]:    [90mdebug -[39m set heartbeat interval for client 2552024241371849212
+2015-01-13T12:22:53.705179+00:00 app[web.1]:    [90mdebug -[39m set heartbeat interval for client 6180352001135843776
+2015-01-13T12:23:08.712837+00:00 app[web.1]:    [90mdebug -[39m websocket writing 2::
+2015-01-13T12:23:08.712919+00:00 app[web.1]:    [90mdebug -[39m set heartbeat timeout for client 899529117894027639
+2015-01-13T12:23:08.715093+00:00 app[web.1]:    [90mdebug -[39m emitting heartbeat for client 27427840125564870
+2015-01-13T12:23:08.715234+00:00 app[web.1]:    [90mdebug -[39m websocket writing 2::
+2015-01-13T12:23:08.778108+00:00 app[web.1]:    [90mdebug -[39m got heartbeat packet
+2015-01-13T12:23:08.712641+00:00 app[web.1]:    [90mdebug -[39m emitting heartbeat for client 899529117894027639
+2015-01-13T12:23:08.778154+00:00 app[web.1]:    [90mdebug -[39m cleared heartbeat timeout for client 27427840125564870
+2015-01-13T12:23:08.778207+00:00 app[web.1]:    [90mdebug -[39m set heartbeat interval for client 27427840125564870
+2015-01-13T12:23:08.778426+00:00 app[web.1]:    [90mdebug -[39m set heartbeat interval for client 899529117894027639
+2015-01-13T12:23:08.778314+00:00 app[web.1]:    [90mdebug -[39m got heartbeat packet
+2015-01-13T12:23:08.715277+00:00 app[web.1]:    [90mdebug -[39m set heartbeat timeout for client 27427840125564870
+2015-01-13T12:23:08.778378+00:00 app[web.1]:    [90mdebug -[39m cleared heartbeat timeout for client 899529117894027639
+2015-01-13T12:23:09.222475+00:00 app[web.1]:    [90mdebug -[39m websocket writing 2::
+2015-01-13T12:23:09.222558+00:00 app[web.1]:    [90mdebug -[39m set heartbeat timeout for client 19177510721494419020
+2015-01-13T12:23:09.290673+00:00 app[web.1]:    [90mdebug -[39m got heartbeat packet
+2015-01-13T12:23:09.290785+00:00 app[web.1]:    [90mdebug -[39m set heartbeat interval for client 19177510721494419020
+2015-01-13T12:23:09.290733+00:00 app[web.1]:    [90mdebug -[39m cleared heartbeat timeout for client 19177510721494419020
+2015-01-13T12:23:09.222170+00:00 app[web.1]:    [90mdebug -[39m emitting heartbeat for client 19177510721494419020
+2015-01-13T12:23:09.596589+00:00 app[web.1]:    [90mdebug -[39m cleared heartbeat timeout for client 1038053909992897284
+2015-01-13T12:23:09.599590+00:00 app[web.1]:    [90mdebug -[39m set heartbeat interval for client 1499164411323397503
+2015-01-13T12:23:09.530950+00:00 app[web.1]:    [90mdebug -[39m emitting heartbeat for client 905950369675011230
+2015-01-13T12:23:09.596504+00:00 app[web.1]:    [90mdebug -[39m got heartbeat packet
+2015-01-13T12:23:09.599540+00:00 app[web.1]:    [90mdebug -[39m cleared heartbeat timeout for client 1499164411323397503
+2015-01-13T12:23:09.528677+00:00 app[web.1]:    [90mdebug -[39m websocket writing 2::
+2015-01-13T12:23:09.528571+00:00 app[web.1]:    [90mdebug -[39m websocket writing 2::
+2015-01-13T12:23:09.528727+00:00 app[web.1]:    [90mdebug -[39m set heartbeat timeout for client 1038053909992897284
+2015-01-13T12:23:09.531101+00:00 app[web.1]:    [90mdebug -[39m set heartbeat timeout for client 905950369675011230
+2015-01-13T12:23:09.596660+00:00 app[web.1]:    [90mdebug -[39m set heartbeat interval for client 1038053909992897284
+2015-01-13T12:23:09.597313+00:00 app[web.1]:    [90mdebug -[39m got heartbeat packet
+2015-01-13T12:23:09.597357+00:00 app[web.1]:    [90mdebug -[39m cleared heartbeat timeout for client 905950369675011230
+2015-01-13T12:23:09.528580+00:00 app[web.1]:    [90mdebug -[39m emitting heartbeat for client 1038053909992897284
+2015-01-13T12:23:09.531051+00:00 app[web.1]:    [90mdebug -[39m websocket writing 2::
+2015-01-13T12:23:09.597410+00:00 app[web.1]:    [90mdebug -[39m set heartbeat interval for client 905950369675011230
+2015-01-13T12:23:09.528578+00:00 app[web.1]:    [90mdebug -[39m set heartbeat timeout for client 1499164411323397503
+2015-01-13T12:23:09.599493+00:00 app[web.1]:    [90mdebug -[39m got heartbeat packet
+2015-01-13T12:23:09.528228+00:00 app[web.1]:    [90mdebug -[39m emitting heartbeat for client 1499164411323397503
+2015-01-13T12:23:13.705684+00:00 app[web.1]:    [90mdebug -[39m emitting heartbeat for client 2552024241371849212
+2015-01-13T12:23:13.705899+00:00 app[web.1]:    [90mdebug -[39m websocket writing 2::
+2015-01-13T12:23:13.706011+00:00 app[web.1]:    [90mdebug -[39m set heartbeat timeout for client 2552024241371849212
+2015-01-13T12:23:13.706046+00:00 app[web.1]:    [90mdebug -[39m emitting heartbeat for client 2056785224283806112
+2015-01-13T12:23:13.706164+00:00 app[web.1]:    [90mdebug -[39m websocket writing 2::
+2015-01-13T12:23:13.706253+00:00 app[web.1]:    [90mdebug -[39m emitting heartbeat for client 6180352001135843776
+2015-01-13T12:23:13.830386+00:00 app[web.1]:    [90mdebug -[39m cleared heartbeat timeout for client 6180352001135843776
+2015-01-13T12:23:13.706212+00:00 app[web.1]:    [90mdebug -[39m set heartbeat timeout for client 2056785224283806112
+2015-01-13T12:23:13.706406+00:00 app[web.1]:    [90mdebug -[39m set heartbeat timeout for client 6180352001135843776
+2015-01-13T12:23:13.706366+00:00 app[web.1]:    [90mdebug -[39m websocket writing 2::
+2015-01-13T12:23:13.830221+00:00 app[web.1]:    [90mdebug -[39m set heartbeat interval for client 2552024241371849212
+2015-01-13T12:23:13.830321+00:00 app[web.1]:    [90mdebug -[39m got heartbeat packet
+2015-01-13T12:23:13.830426+00:00 app[web.1]:    [90mdebug -[39m set heartbeat interval for client 6180352001135843776
+2015-01-13T12:23:13.829785+00:00 app[web.1]:    [90mdebug -[39m got heartbeat packet
+2015-01-13T12:23:13.829912+00:00 app[web.1]:    [90mdebug -[39m cleared heartbeat timeout for client 2056785224283806112
+2015-01-13T12:23:13.829986+00:00 app[web.1]:    [90mdebug -[39m set heartbeat interval for client 2056785224283806112
+2015-01-13T12:23:13.830125+00:00 app[web.1]:    [90mdebug -[39m got heartbeat packet
+2015-01-13T12:23:13.830180+00:00 app[web.1]:    [90mdebug -[39m cleared heartbeat timeout for client 2552024241371849212
