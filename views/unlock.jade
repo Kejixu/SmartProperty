@@ -1,0 +1,49 @@
+extends layout
+block title
+    | Unlock
+block content
+    nav.navbar.navbar-custom.navbar-fixed-top(role="navigation")
+        .container
+          .navbar-header.page-scroll
+            a.navbar-brand(href="/") BitTrade
+          // Collect the nav links, forms, and other content for toggling
+          .collapse.navbar-collapse.navbar-right.navbar-main-collapse
+            ul.nav.navbar-nav
+              li.active
+                a(href="/") Home
+              li
+                a(href="/#about") About
+              li
+                a(href="/transaction") bitTrade
+              li
+                a(href="/unlock") Unlock
+         // /.navbar-collapse
+        // /.container
+      // Section: intro
+    section#intro.chat-intro
+     .slogan
+      h2
+        | Unlock
+    section#transaction.home-section.text-center
+      .heading-contact
+        .container
+          .row
+            .col-lg-8.col-lg-offset-2
+              .wow.bounceInDown(data-wow-delay="0.4s")
+                .section-heading
+                  h2 Open Lock
+      .container
+        .row
+          .col-lg12
+            .boxed-grey
+                form
+                .row
+                  .col-md-8
+                    .form-group
+                        .ikey
+                            label(for="Private Key")
+                                | Private Key
+                            input#priveaddress.form-control(type="password", placeholder="Private")
+                    .col-md-12
+                            button#sign.btn.btn-skin.pull-right(type="button")
+                              | Send

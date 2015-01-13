@@ -3,6 +3,7 @@ var connect = require('connect')
     , express = require('express')
     , io = require('socket.io')
     , utxos = require('./getUTXOs')
+    , genTx = require('./genSmtPropTx')
     , bitcore = require('bitcore')
     , port = (process.env.PORT || 8081);
 
@@ -53,8 +54,11 @@ server.listen( port);
 
 //Setup Socket.IO
 var io = io.listen(server);
-io.sockets.on('connection', function(socket){
+var sellBio = {};
+var buyBio = {};
 
+io.sockets.on('connection', function(socket){
+  
   console.log('Client Connected');
   socket.on('message', function(data){
     socket.broadcast.emit('server_message',data);
@@ -65,41 +69,68 @@ io.sockets.on('connection', function(socket){
     console.log('Client Disconnected.');
   });
 
+  
   // Get the seller's information
   socket.on('selling', function(data){
     // Broadcast the sellers information
 //    socket.emit('sellers', data);
-    socket.broadcast.emit('sellers', data);
+    io.sockets.emit('sellers', data);
   });
 
-  var myUtxos;
+  // Listening for Buyer's payment information
   socket.on('payment', function(payment){
+    sellBio.recPayAddr = payment.receieveaddress;
+    sellBio.price = parseInt(payment.price);
+    buyBio.changeAddr = payment.changeaddress;
     addr = new bitcore.Address(payment.payaddress);
-    // Send the UTXOs
+    // Get the UTXOs
     utxos.getUTXOs(addr.toString(), function(utxos){
       console.log("waiting");
+      // Send the utxos
       socket.emit('utxos', utxos);
-     // socket.broadcast.emit('utxos', utxos);
-    });
+      // Listen for the selected utxos
+      socket.on('selutxos', function(myUTXOs) {
+        console.log("selected UTXOs");
+        console.log(myUTXOs);
+        var myList = [];
+        var x;
+        for(x = 0; x < myUTXOs.length; x++) {
+          var selU = {};
+          selU.txhash = myUTXOs[x].hash;
+          selU.outputindex = parseInt(myUTXOs[x].index);
+          selU.amount = parseInt(myUTXOs[x].cost);
+          myList.push(selU);
+        }
+        buyBio.utxolist = myList; 
+        // Sends the buyer's private address ready
+        io.sockets.emit('showPrivate');
+        // Listen for buyerkey
+        socket.on('buyPriv', function(buyerKey){
+          // Let's seller know it's ready
+          buyBio.privateKey = buyerKey;
+          io.sockets.emit('sellerReady');
+          //console.log("ownerkey: " + ownerKey);          
+            
+        });
 
-    socket.on('selutxos', function(myUTXOs) {
-      console.log("selected UTXOs");
-      io.sockets.emit('showPrivate');
-      myUtxos = myUTXOs;
       });
     });
 
-  socket.on('buyPriv', function(buyerKey){
-    io.sockets.emit('sellerReady');
-    socket.on('sellPriv', function(ownerKey){
-      //CALL FUNCTION
-      console.log("buyerKey: " + buyerKey);
-      console.log("ownerkey: " + ownerKey);
-      io.sockets.emit("transactionComplete");
-     // socket.emit("transactionComplete");
-    });
   });
 
+  socket.on('sellPriv', function(ownerKey){
+            sellBio.ownershipKey = ownerKey;
+            console.log(sellBio);
+            console.log(buyBio);
+            genTx.genSmtPropTx(buyBio, sellBio, function(data) {
+              var propertyInfo = {};
+              propertyInfo.privateKey = data;
+              var pubk = new bitcore.PrivateKey(data);
+              propertyInfo.publicAddress = pubk.toAddress();
+              io.sockets.emit("transactionComplete", propertyInfo);
+            })
+            
+  });
 
 });
 
@@ -132,6 +163,18 @@ server.get('/transaction', function(req,res){
             }
     });
 });
+
+server.get('/unlock', function(req,res){
+  res.render('unlock.jade', {
+    locals : { 
+              title : 'Smart Property'
+             ,description: 'Unlock you lock'
+             ,author: 'Keji Xu'
+             ,analyticssiteid: 'XXXXXXX' 
+            }
+    });
+});
+
 
 //A Route for Creating a 500 Error (Useful to keep around)
 server.get('/500', function(req, res){
