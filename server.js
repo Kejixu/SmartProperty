@@ -4,7 +4,10 @@ var connect = require('connect')
     , io = require('socket.io')
     , utxos = require('./getUTXOs')
     , genTx = require('./genSmtPropTx')
+    , smartprop = require('./initSmartProp')
     , bitcore = require('bitcore')
+    , nosig = require('./sigNonce')
+    , protocol = require('./protocolCom')
     , port = (process.env.PORT || 8081);
 
 var pk = new bitcore.PrivateKey();
@@ -131,6 +134,79 @@ io.sockets.on('connection', function(socket){
             })
             
   });
+
+  socket.on('propertyPayment', function(propPay){
+    console.log(propPay);
+    propBio = {};
+    addr = new bitcore.Address(propPay.payaddress);
+    propBio.propertyValue = parseInt(propPay.propVal);
+    propBio.changeAddress = propPay.changeaddress;
+    utxos.getUTXOs(addr.toString(), function(utxos){
+      console.log("waiting");
+      // Send the utxos
+      socket.emit('utxos', utxos);
+      // Listen for the selected utxos
+      socket.on('selutxos', function(myUTXOs) {
+        console.log("selected UTXOs");
+        console.log(myUTXOs);
+        var myList = [];
+        var x;
+        for(x = 0; x < myUTXOs.length; x++) {
+          var selU = {};
+          selU.txhash = myUTXOs[x].hash;
+          selU.outputindex = parseInt(myUTXOs[x].index);
+          selU.amount = parseInt(myUTXOs[x].cost);
+          myList.push(selU);
+        }
+
+        propBio.utxolist = myList;
+        socket.on('sendPropPriv', function(priv){
+          propBio.privKey = priv;
+          console.log(propBio);
+          smartprop.smartProp(propBio.privKey, propBio.propertyValue, propBio.changeAddress, propBio.utxolist, function(propPrive){
+              console.log(propPrive);
+              io.sockets.emit("PropDone");
+          });
+
+        });
+      });
+    });
+  });
+
+socket.on('keyInit', function(){
+      console.log("initliazing");
+        protocol.initLock("1DaAdNSeJk2X1vbfTXTNWtt5RxFRqpFAys", "793f84c05731ad93eccfc1c355022548b5a696526ebf51291dae83a950bcddc5", function(res){
+            io.sockets.emit('initResponse', res);
+        });
+    });
+
+socket.on('listenTx', function(){
+      console.log("listen Init");
+        protocol.getTx(function(res){
+            io.sockets.emit('txResponse', res);
+        });
+    });
+
+socket.on('listenAddress', function(){
+      console.log("listen address");
+        protocol.getAddress(function(res){
+            io.sockets.emit('adResponse', res);
+        });
+    });
+socket.on('getNonce', function(){
+      console.log("Get the Nonce");
+        protocol.getNonce(function(res){
+            io.sockets.emit('nonceResponse', res);
+            socket.on('sigNonce', function(privKey){
+            var sig = nosig.signN(res, privKey);
+            console.log("Sign the Nonce");
+              protocol.getOwner(sig, function(val){
+                  io.sockets.emit('ownershipValidation', val);
+              });
+          });
+        });
+    });
+
 
 });
 

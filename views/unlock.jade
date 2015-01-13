@@ -24,7 +24,7 @@ block content
      .slogan
       h2
         | Unlock
-    section#transaction.home-section.text-center
+    section.home-section.text-center
       .heading-contact
         .container
           .row
@@ -34,16 +34,67 @@ block content
                   h2 Open Lock
       .container
         .row
-          .col-lg12
+          .col-lg-12
             .boxed-grey
+                .row
+                    .categories
+                        .col-md-6
+                            button#initial.btn.btn-success.center(type="button")
+                                | Initialize New Property Key
+                        .col-md-6
+                            button#turnOn.btn.btn-warning.center(type="button")
+                                | Lock Commands
+                    .lockCommands
+                        .form-group
+                            button#init.btn.btn-danger.center(type="button")
+                                | Initalize Lock
+                        .form-group
+                            button#getTx.btn.btn-primary.center(type="button")
+                                | Get Most Recent Tx
+                        .form-group
+                            button#getAddress.btn.btn-primary.center(type="button")
+                                | Get Address
+                         .form-group
+                            button#open.btn.btn-success.center(type="button")
+                                | Open Lock
+                    .privNKey
+                        .col-md-8
+                            .form-group
+                                label(for="PrivateAddress")
+                                  | Lock's Private Key
+                                input#privNKey.form-control(type="password", placeholder="Private")
+                            button#keySend.btn.btn-skin.pull-left(type="button")
+                                | Send
+                    .col-md-6            
+                        #notes
                 form
                 .row
-                  .col-md-8
+                  .col-md-6
                     .form-group
-                        .ikey
-                            label(for="Private Key")
-                                | Private Key
+                        .buying
+                          .form-group
+                            label(for="PaymentAddress")
+                              | Payment Address
+                            input#payaddress.form-control(type="text", placeholder="Address")
+                          .form-group
+                            label(for="ChangeAddress")
+                              | Change Address
+                            input#chanaddress.form-control(type="text", placeholder="Address")
+                          .form-group
+                            label(for="")
+                              | Satoshis input
+                            input#propvalue.form-control(type="number", placeholder="Satoshis")
+                        .buyPriv
+                          .form-group
+                            label(for="PrivateAddress")
+                              | Your Private Key
                             input#priveaddress.form-control(type="password", placeholder="Private")
-                    .col-md-12
-                            button#sign.btn.btn-skin.pull-right(type="button")
+                        .col-md-6
+                            #selection
+                              .currentUTXOs
+                                .form-group
+                        .col-md-12
+                            button#signs.btn.btn-skin.pull-right(type="button")
                               | Send
+                .col-lg-4            
+                    #server_outputs

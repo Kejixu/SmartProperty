@@ -1,7 +1,7 @@
 /* Author: YOUR NAME HERE
 */
 $(document).ready(function() {   
-
+  
 
   var socket = io.connect();
   var step = 0;
@@ -133,16 +133,108 @@ $(document).ready(function() {
   });
 
 
-  	
+
+$('#initial').bind('click', function(){
+  $('button').hide();
+  $('.buying').show();
+  $('#signs').show();
+});
 
 
- /* $('#sender').bind('click', function() {
-   socket.emit('message', 'Message Sent on ' + new Date());     
+var click = 1;
+$('#signs').bind('click', function() {
+  if(click == 1){
+    click++;
+    $('.buying').hide();
+    var myAddresses = {payaddress: $('#payaddress').val(), changeaddress: $('#chanaddress').val(), propVal: $('#propvalue').val()};
+    socket.emit('propertyPayment', myAddresses);
+    console.log(myAddresses);
+    $(".currentUTXOs").append('<h4>Your UTXOs:</h4>');
+    socket.on('utxos', function(data){
+      console.log(data);
+      var x;
+      for (x = 0; x < data.length; x++){
+        var hash = data[x].hash;
+        var price = data[x].value;
+        var index = data[x].index;
+
+        // Adds a checkbox of UTXos
+       $("#selection .currentUTXOs").append('<div class="checkbox"><label><input type="checkbox" index='+index+ ' name=' + hash + ' value=' + price + '>' + hash + " " + price + " </label></div>");
+      }
+    });
+  }
+  else if(click == 2) {
+    click++;
+    var values = $('input:checkbox:checked').map(function () {
+          val = {hash: this.name, cost: this.value, index: this.getAttribute("index")};
+          return val;
+        }).get();
+        console.log(values);
+        //Send UTXOs to server
+        socket.emit('selutxos', values); 
+        $("#server_outputs").append('<li>Sending Information to Server....</li>');
+    $(".currentUTXOs").hide();
+    $(".buyPriv").show();
+  }
+  else if(click == 3){
+    click++;
+    socket.emit('sendPropPriv', $("#priveaddress").val());
+    $(".buyPriv").hide();
+  }
+});
+
+$("#turnOn").bind('click', function(){
+    $('button').hide();
+    $('.lockCommands button').show();
+    $('.lockCommands').show();
+});
+
+
+$('.lockCommands #init').click(function(){
+  console.log('init');
+  socket.emit('keyInit');
+  socket.on('initResponse', function(res) {
+    alert(res);
   });
+});
 
-  socket.on('server_message', function(data){
-   $('#receiver').append('<li>' + data + '</li>');  
-  }); */
 
+$('.lockCommands #getTx').click(function(){
+  console.log('tx init');
+  socket.emit('listenTx');
+
+  socket.on('txResponse', function(res) {
+    alert(res);
+  });
+});
+
+
+$('.lockCommands #getAddress').click(function(){
+  console.log('init');
+  socket.emit('listenAddress');
+  socket.on('adResponse', function(res) {
+    alert(res);
+  });
+});
+
+
+$('.lockCommands #open').click(function(){
+  console.log('opening');
+  socket.emit('getNonce');
+  socket.on('nonceResponse', function(res) {
+    $('#notes').append("<div class='alert alert-danger' role='alert'>Nonce: " + res + " </div>")
+    $('.privNKey').show();
+    $('.privNKey #keySend').show();
+  });
+});
+
+$('#keySend').click(function() {
+  console.log('submit');
+  socket.emit('sigNonce', $("#privNKey").val());
+  $('.privNKey').hide();
+  socket.on('ownershipValidate', function(res){
+    alert(res);
+  })
+})
 
 });

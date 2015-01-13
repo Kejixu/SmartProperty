@@ -375,6 +375,24 @@ form#transaction input:focus,form#transaction select:focus,form#transaction text
   display: none;
 }
 
+/* Property function*/
+
+.ikey{
+  display:none;
+}
+
+#signs{
+  display: none;
+}
+
+.lockCommands{
+  display:none;
+}
+
+.privNKey {
+  display:none;
+}
+
 
 /* ===========================
 --- Intro
